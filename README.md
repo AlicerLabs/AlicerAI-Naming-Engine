@@ -1,6 +1,7 @@
-# Alicer AI – Model & Product Name Generator
+# Alicer AI – Model & Product Name Generator🌸
 
-A lightweight, elegant name generator for AI models, products, features, and code names. Dual engine with curated Alicer Mode and optional Gemini Mode.
+A lightweight, elegant name generator for AlicerAI's models, products, features, and code names. Dual engine with curated Alicer Mode and optional Gemini Mode.
+Made mainly for AlicerAI's Ecosystem
 
 ## Features
 
@@ -42,19 +43,7 @@ Visit `http://localhost:8000/` and open `index.html`.
 - Export JSON: `Export JSON` → `alicerai-names.json`
 - Export CSV: `Export CSV` → `alicerai-names.csv`
 
-## Project Structure
-
-```
-index.html
-styles/app.css
-src/app.js
-README.md
-```
-
-## Branding
-
-Place your logo at `assets/alicerai-logo.png` and add it to the header if desired.
-
 ## License
 
-MIT
+View on Github
+(c) AlicerLabs 2025 - alicerlabs@nguyen.hs.vc
