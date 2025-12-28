@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alicer AI Name Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/app.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="brand">
+      <div class="brand-mark">
+        <svg width="60" height="60" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#ff7ab6" />
+              <stop offset="100%" stop-color="#ffb86b" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="54" fill="url(#g)" opacity="0.2" />
+          <path d="M60 18 L66 44 L94 44 L71 60 L78 90 L60 72 L42 90 L49 60 L26 44 L54 44 Z" fill="url(#g)" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>AlicerAI</h1>
+        <p>Elegant names for AlicerAI's AI models, products, and more!</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="mode-switch">
+        <button class="mode-btn active" data-mode="alicer">Alicer Mode</button>
+        <button class="mode-btn" data-mode="gemini">Gemini Mode</button>
+      </div>
+      <div class="gemini-key" hidden>
+        <label>Gemini API Key</label>
+        <input type="password" id="geminiKey" placeholder="Enter API key" autocomplete="off" />
+      </div>
+
+      <div class="controls">
+        <div class="control">
+          <label>Custom Name</label>
+          <input type="text" id="customName" placeholder="Model Name, Product Name, More..." value="AlicerAI Nano 2 Pro v3.5" />
+        </div>
+        <div class="control">
+          <label>Seed Source</label>
+          <select id="seedSource">
+            <option value="random" selected>Random</option>
+            <option value="flowers">Flowers</option>
+            <option value="gems">Gems</option>
+            <option value="aura">Aura</option>
+            <option value="stellar">Stellar</option>
+            <option value="mythic">Mythic</option>
+          </select>
+        </div>
+        <div class="control">
+          <label>Style Balance</label>
+          <div class="slider-row">
+            <span>Cute</span>
+            <input type="range" id="style" min="0" max="100" value="50" />
+            <span>Professional</span>
+          </div>
+        </div>
+        <div class="control">
+          <label>Count</label>
+          <input type="number" id="count" value="8" min="1" max="24" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="generate" class="primary">Generate Names</button>
+        <button id="shuffle" class="secondary">Shuffle</button>
+        <button id="copy" class="secondary">Copy</button>
+        <button id="exportjson" class="ghost">Export JSON</button>
+        <button id="exportcsv" class="ghost">Export CSV</button>
+      </div>
+    </section>
+
+    <section class="results" id="results"></section>
+
+    <footer class="foot">
+      <div>Designed for creators, developers, and startups</div>
+      <div>Dual engine with curated Alicer Mode and optional Gemini Mode</div>
+    </footer>
+  </div>
+
+  <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+* { box-sizing: border-box }
+html, body { height: 100% }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1200px 600px at 10% 0%, #fff0f7 0%, #ffffff 50%, #fef9ff 100%); color: #1f1f29 }
+.app { max-width: 1100px; margin: 0 auto; padding: 32px }
+.brand { display: flex; align-items: center; gap: 16px; padding: 8px 0 24px }
+.brand-text h1 { margin: 0; font-size: 32px; letter-spacing: 0.4px; background: linear-gradient(90deg, #ff7ab6, #ffb86b); -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 3.5s ease-in-out infinite }
+.brand-text p { margin: 4px 0 0; color: #6b6b7a }
+.panel { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border: 1px solid #f3e4ee; border-radius: 16px; padding: 20px; box-shadow: 0 8px 32px rgba(255, 122, 182, 0.08) }
+.mode-switch { display: inline-flex; border: 1px solid #f3e4ee; border-radius: 12px; overflow: hidden; margin-bottom: 12px }
+.mode-btn { appearance: none; border: none; background: transparent; padding: 10px 14px; font-weight: 600; color: #8b6a75; cursor: pointer }
+.mode-btn.active { background: #fff5fa; color: #b14d7a }
+.gemini-key { display: grid; grid-template-columns: 160px 1fr; gap: 12px; align-items: center; margin: 12px 0 4px }
+.gemini-key input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e9d5df; background: #fff }
+.controls { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px }
+.control { display: flex; flex-direction: column; gap: 8px }
+.control label { font-size: 13px; color: #6b6b7a }
+.control input[type="text"],
+.control input[type="number"],
+.control select { padding: 10px 12px; border-radius: 10px; border: 1px solid #e9d5df; background: #fff }
+.slider-row { display: grid; grid-template-columns: 40px 1fr 95px; gap: 8px; align-items: center }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px }
+.primary { background: linear-gradient(90deg, #ff7ab6, #ffb86b); color: #fff; border: none; padding: 10px 14px; border-radius: 12px; font-weight: 600; cursor: pointer }
+.secondary { background: #ffffff; color: #b14d7a; border: 1px solid #f3e4ee; padding: 10px 14px; border-radius: 12px; font-weight: 600; cursor: pointer }
+.ghost { background: transparent; color: #8b6a75; border: 1px dashed #e9d5df; padding: 10px 14px; border-radius: 12px; font-weight: 600; cursor: pointer }
+.primary, .secondary, .ghost { transition: transform .18s ease, box-shadow .18s ease, background .18s ease }
+.primary:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(255, 122, 182, 0.24) }
+.secondary:hover, .ghost:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(177, 77, 122, 0.18) }
+.results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 22px 0 }
+.card { position: relative; background: #fff; border: 1px solid #f3e4ee; border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(255, 122, 182, 0.06); animation: pop 300ms ease-out both; transition: transform .22s ease, box-shadow .22s ease }
+.card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(255, 122, 182, 0.12) }
+.card h3 { margin: 0; font-size: 18px; color: #2a2431 }
+.card .meta { margin-top: 8px; font-size: 12px; color: #7c7284 }
+@keyframes pop { from { transform: translateY(6px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+@keyframes shimmer { 0% { filter: none } 50% { filter: brightness(1.08) } 100% { filter: none } }
+.foot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 12px; color: #7c7284 }
+@media (max-width: 980px) {
+  .controls { grid-template-columns: repeat(2, 1fr) }
+  .results { grid-template-columns: repeat(2, 1fr) }
+  .foot { grid-template-columns: 1fr }
+}
+@media (max-width: 560px) {
+  .controls { grid-template-columns: 1fr }
+  .results { grid-template-columns: 1fr }
+}
